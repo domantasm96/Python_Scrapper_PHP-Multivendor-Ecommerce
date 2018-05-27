@@ -2,15 +2,14 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import json
-import csv
 import re
 import MySQLdb
 import os
 
 DB_NAME = 'Sqli_coursework'
-DB_USER = 'root'
+DB_USER = 'test'
 DB_PSW = 'test'
-HOST = 'test'
+HOST = 'localhost'
 
 LOGIN_URL = 'http://www.fxwebsolution.com//demo/arthi/multivendor/sign-in.php'
 SELENIUM_PATH = '/home/domantas/Documents/phantomjs-2.1.1-linux-x86_64/bin/phantomjs'
@@ -21,7 +20,7 @@ ITERATION_NUM = 70
 auth_username = 'tesotest22@gmail.com'
 auth_password = 'super1234'
 
-os.system("""mysql -uroot -p'nesakysiu' < database_creation""")
+os.system("""mysql -utest -p'test' < database_creation""")
 db = MySQLdb.connect(host=HOST, user=DB_USER, passwd=DB_PSW, db=DB_NAME)
 cursor = db.cursor()
 
@@ -164,3 +163,6 @@ wishlist_data = my_whishlist()
 db_seller_insert()
 db_cart_insert();
 db_wishlist_insert();
+
+driver.close()
+db.close()
