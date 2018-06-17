@@ -8,7 +8,7 @@ import os
 
 DB_NAME = 'kursinis'
 DB_USER = 'root'
-DB_PSW = ''
+DB_PSW = 'root'
 HOST = 'localhost'
 
 LOGIN_URL = 'http://www.fxwebsolution.com//demo/arthi/multivendor/sign-in.php'
@@ -20,7 +20,7 @@ ITERATION_NUM = 70
 auth_username = 'tesotest22@gmail.com'
 auth_password = 'super1234'
 
-os.system("""mysql -utest -p'test' < database_creation""")
+os.system("""mysql -uroot -p'root' < database_creation""")
 db = MySQLdb.connect(host=HOST, user=DB_USER, passwd=DB_PSW, db=DB_NAME)
 cursor = db.cursor()
 
