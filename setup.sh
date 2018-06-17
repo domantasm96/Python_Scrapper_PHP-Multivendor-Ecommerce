@@ -34,4 +34,12 @@ sudo ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
 
 #install phyton3 selenium
 sudo apt-get upgrade
+sudo apt-get install python3-setuptools
+sudo pip3 install mysqlclient
 sudo pip3 install selenium
+sudo pip3 install BeautifulSoup4
+
+#install mysql server
+sudo apt-get install mysql-server
+sudo mysql_secure_installation
+sudo mysql_install_db

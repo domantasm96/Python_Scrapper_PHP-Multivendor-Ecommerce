@@ -6,13 +6,13 @@ import re
 import MySQLdb
 import os
 
-DB_NAME = 'Sqli_coursework'
+DB_NAME = 'kursinis'
 DB_USER = 'root'
 DB_PSW = ''
 HOST = 'localhost'
 
 LOGIN_URL = 'http://www.fxwebsolution.com//demo/arthi/multivendor/sign-in.php'
-SELENIUM_PATH = '/home/domantas/Documents/phantomjs-2.1.1-linux-x86_64/bin/phantomjs'
+SELENIUM_PATH = '/usr/local/share/phantomjs-1.9.8-linux-x86_64/bin/phantomjs'
 driver = webdriver.PhantomJS(executable_path=SELENIUM_PATH)
 
 ITERATION_NUM = 70

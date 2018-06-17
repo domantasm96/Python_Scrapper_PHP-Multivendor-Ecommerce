@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS Sqli_coursework;
+CREATE DATABASE IF NOT EXISTS kursinis;
 
-USE Sqli_coursework;
+USE kursinis;
 
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS User;
