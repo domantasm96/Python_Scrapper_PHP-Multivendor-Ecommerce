@@ -7,8 +7,8 @@ import MySQLdb
 import os
 
 DB_NAME = 'Sqli_coursework'
-DB_USER = 'test'
-DB_PSW = 'test'
+DB_USER = 'root'
+DB_PSW = ''
 HOST = 'localhost'
 
 LOGIN_URL = 'http://www.fxwebsolution.com//demo/arthi/multivendor/sign-in.php'
@@ -32,6 +32,8 @@ def login_session():
     password.send_keys(auth_password)
     driver.find_element_by_name('loginuser').click()
 
+login_session()
+
 def remove_spaces(string):
     return re.sub(' {2,}', '_', string)
 
@@ -40,6 +42,7 @@ def seller_view():
     print('TARGET: http://www.fxwebsolution.com//demo/arthi/multivendor/seller-view.php?usid=')
     data_list = []
     user_list = []
+#     ITERATION_NUM
     for uid in range(ITERATION_NUM):
         print('Scraping data from {} user'.format(uid))
         is_empty = True
@@ -59,6 +62,8 @@ def seller_view():
         user_list = []
 
     return data_list
+
+seller_data = seller_view()
 
 def shopping_cart():
     print('SHOPPING CART SCRIPT IS EXECUTED')
@@ -88,6 +93,8 @@ def shopping_cart():
     print('SHOPPING CART SCRIPT IS FINISHED')
     return data_list
 
+cart_data = shopping_cart()
+
 def my_whishlist():
     print('MY WISHLIST SCRIPT IS EXECUTED')
     print('TARGET: http://www.fxwebsolution.com/demo/arthi/multivendor/my_wishlist.php?fid=')
@@ -111,6 +118,8 @@ def my_whishlist():
             user_data.append(temp_list)
     return user_data
 
+wishlist_data = my_whishlist()
+
 def db_seller_insert():
     column_names = '(user_id,name, email,mobile,company,about_company,ph_no,store_name,cancellation_policy,compnay_url,company_address1,company_address2)'
     format_param = ('%s,' * len(seller_data[0:12]))[:-1]
@@ -124,6 +133,7 @@ def db_seller_insert():
         except:
             db.rollback()
 
+db_seller_insert()
 
 def db_cart_insert():
     column_names = '(user_id,s_no, product_name,product_rank,product_color,quantity,subtotal,grandtotal)'
@@ -142,8 +152,11 @@ def db_cart_insert():
         except:
             db.rollback()
 
+db_cart_insert();
+
 def db_wishlist_insert():
     column_names = '(user_id, product_name,product_rank,product_price)'
+    format_param = ('%s,' * len(seller_data[0:12]))[:-1]
     for i in range(len(wishlist_data)):
         temp = []
         for j in wishlist_data[i]:
@@ -153,15 +166,8 @@ def db_wishlist_insert():
             cursor.execute("INSERT INTO Wishlist "+ column_names +" VALUES ("+format_param+")""",temp)
             db.commit()
         except:
-            print('ERROR')
             db.rollback()
 
-login_session()
-seller_data = seller_view()
-cart_data = shopping_cart()
-wishlist_data = my_whishlist()
-db_seller_insert()
-db_cart_insert();
 db_wishlist_insert();
 
 driver.close()
