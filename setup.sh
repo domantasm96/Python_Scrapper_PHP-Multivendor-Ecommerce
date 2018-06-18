@@ -32,16 +32,24 @@ sudo tar xvjf $PHANTOM_JS.tar.bz2
 sudo mv $PHANTOM_JS /usr/local/share
 sudo ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
 
+export LC_ALL=C
+sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
 #install phyton3 selenium
 sudo apt-get upgrade
 sudo apt-get install python3-setuptools
+pip3 install selenium
+pip3 install BeautifulSoup4
+pip3 install lxml
 
 #install pip
+sudo sudo apt install python3-pip
 sudo apt-get install python3-setuptools
 sudo apt-get install python-pip python-dev libmysqlclient-dev
 
+
 #install mysql server
 sudo apt-get install mysql-server
+pip3 install mysqlclient
 # sudo mysql_secure_installation
 # sudo mysql_install_db
 
