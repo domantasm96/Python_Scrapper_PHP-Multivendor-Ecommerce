@@ -15,7 +15,7 @@ LOGIN_URL = 'http://www.fxwebsolution.com//demo/arthi/multivendor/sign-in.php'
 SELENIUM_PATH = '/usr/local/share/phantomjs-1.9.8-linux-x86_64/bin/phantomjs'
 driver = webdriver.PhantomJS(executable_path=SELENIUM_PATH)
 
-ITERATION_NUM = 70
+ITERATION_NUM = 5
 
 auth_username = 'tesotest22@gmail.com'
 auth_password = 'super1234'
@@ -111,7 +111,7 @@ def my_whishlist():
             text = remove_spaces(product.get_text().replace('\n', ' ').replace('\t', '').replace('\xa0','').strip())
             if text == '':
                 continue
-            text = re.sub('(INR[0-9]+){2}',re.search('INR[0-9]+', text)[0], text)
+            # text = re.sub('(INR[0-9]+){2}',re.search('INR[0-9]+', text)[0], text)
             temp_list.append(fid)
             for i in text.split('_')[:-1]:
                 temp_list.append(i)
