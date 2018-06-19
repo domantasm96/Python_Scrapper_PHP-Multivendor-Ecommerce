@@ -1,9 +1,0 @@
-PhantomJS is launching GhostDriver...
-[INFO  - 2018-06-18T15:38:55.542Z] GhostDriver - Main - running on port 39333
-[INFO  - 2018-06-18T15:38:56.462Z] Session [b6456390-730d-11e8-a682-8b4fc112888d] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34","webSecurityEnabled":true}
-[INFO  - 2018-06-18T15:38:56.462Z] Session [b6456390-730d-11e8-a682-8b4fc112888d] - page.customHeaders:  - {}
-[INFO  - 2018-06-18T15:38:56.462Z] Session [b6456390-730d-11e8-a682-8b4fc112888d] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"1.9.8","driverName":"ghostdriver","driverVersion":"1.1.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2018-06-18T15:38:56.463Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: b6456390-730d-11e8-a682-8b4fc112888d
-[ERROR - 2018-06-18T15:39:04.445Z] Session [b6456390-730d-11e8-a682-8b4fc112888d] - page.onError - msg: ReferenceError: Can't find variable: swal
-[ERROR - 2018-06-18T15:39:04.445Z] Session [b6456390-730d-11e8-a682-8b4fc112888d] - page.onError - stack:
-  (anonymous function) (http://www.fxwebsolution.com//demo/arthi/multivendor/sign-in.php:811)
